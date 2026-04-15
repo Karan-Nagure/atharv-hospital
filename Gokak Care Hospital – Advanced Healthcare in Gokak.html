@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)file:///C:/Users/karan/Downloads/gokak-hospital.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atharv Hospital – Advanced Healthcare in Gokak</title>
+<link href="./Gokak Care Hospital – Advanced Healthcare in Gokak_files/css2" rel="stylesheet">
+<style>
+  :root {
+    --teal:    #2A7A7B;
+    --teal-lt: #4AA8A9;
+    --teal-bg: #EAF6F6;
+    --cream:   #FAF8F5;
+    --warm:    #F4EFE8;
+    --sand:    #E8DDD0;
+    --text:    #1C2B2B;
+    --muted:   #6B8080;
+    --white:   #FFFFFF;
+    --accent:  #E5834A;
+    --green:   #3A8C5C;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+  h1,h2,h3,h4 { font-family: 'Fraunces', serif; }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--white);
+    border-bottom: 1px solid var(--sand);
+    padding: 0 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 70px;
+    box-shadow: 0 2px 12px rgba(42,122,123,.08);
+  }
+  .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .nav-logo-icon {
+    width: 42px; height: 42px; border-radius: 10px;
+    background: var(--teal); display: grid; place-items: center;
+  }
+  .nav-logo-icon svg { width: 22px; height: 22px; fill: none; stroke: #fff; stroke-width: 2; }
+  .nav-logo-text { line-height: 1.1; }
+  .nav-logo-text strong { display: block; font-family: 'Fraunces', serif; font-size: 1.1rem; color: var(--teal); }
+  .nav-logo-text span { font-size: .72rem; color: var(--muted); letter-spacing: .04em; }
+  .nav-links { display: flex; gap: 28px; list-style: none; }
+  .nav-links a { text-decoration: none; color: var(--text); font-size: .88rem; font-weight: 500; transition: color .2s; }
+  .nav-links a:hover { color: var(--teal); }
+  .nav-cta {
+    background: var(--teal); color: #fff; border: none; border-radius: 50px;
+    padding: 10px 22px; font-size: .88rem; font-weight: 600; cursor: pointer;
+    display: flex; align-items: center; gap: 8px;
+    text-decoration: none; transition: background .2s, transform .15s;
+  }
+  .nav-cta:hover { background: var(--teal-lt); transform: translateY(-1px); }
+  .nav-cta svg { width: 16px; height: 16px; fill: #fff; }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; }
+  .hamburger span { width: 24px; height: 2px; background: var(--text); border-radius: 2px; transition: .3s; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: calc(100vh - 70px);
+    background: linear-gradient(135deg, #EAF6F6 0%, #FAF8F5 55%, #F4EFE8 100%);
+    display: grid; grid-template-columns: 1fr 1fr;
+    align-items: center; gap: 40px;
+    padding: 60px 5% 40px;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: -80px; right: -80px;
+    width: 500px; height: 500px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(42,122,123,.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--white); border: 1px solid var(--sand);
+    border-radius: 50px; padding: 6px 14px 6px 8px;
+    font-size: .78rem; font-weight: 500; color: var(--teal); margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(42,122,123,.1);
+  }
+  .hero-badge-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.6;transform:scale(1.3)} }
+  .hero h1 {
+    font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+    line-height: 1.15; font-weight: 700; color: var(--text);
+    margin-bottom: 20px;
+  }
+  .hero h1 em { font-style: italic; color: var(--teal); }
+  .hero p {
+    font-size: 1.05rem; line-height: 1.75; color: var(--muted);
+    max-width: 480px; margin-bottom: 32px;
+  }
+  .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--teal); color: #fff; border: none; border-radius: 50px;
+    padding: 14px 28px; font-size: .95rem; font-weight: 600; cursor: pointer;
+    display: flex; align-items: center; gap: 10px; text-decoration: none;
+    transition: background .2s, transform .15s, box-shadow .2s;
+    box-shadow: 0 4px 16px rgba(42,122,123,.3);
+  }
+  .btn-primary:hover { background: var(--teal-lt); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(42,122,123,.35); }
+  .btn-primary svg { width: 18px; height: 18px; fill: #fff; }
+  .btn-secondary {
+    background: transparent; color: var(--teal); border: 2px solid var(--teal);
+    border-radius: 50px; padding: 13px 26px; font-size: .95rem; font-weight: 600;
+    cursor: pointer; text-decoration: none; transition: all .2s;
+  }
+  .btn-secondary:hover { background: var(--teal-bg); }
+  .hero-stats {
+    display: flex; gap: 28px; margin-top: 44px; flex-wrap: wrap;
+  }
+  .stat { border-left: 3px solid var(--teal); padding-left: 14px; }
+  .stat strong { display: block; font-size: 1.7rem; font-family: 'Fraunces', serif; color: var(--teal); }
+  .stat span { font-size: .8rem; color: var(--muted); font-weight: 500; }
+
+  /* hero visual */
+  .hero-visual { position: relative; display: flex; align-items: center; justify-content: center; }
+  .hero-img-wrap {
+    width: 100%; max-width: 480px;
+    border-radius: 24px; overflow: hidden;
+    box-shadow: 0 20px 60px rgba(42,122,123,.18);
+    position: relative;
+  }
+  .hero-placeholder {
+    width: 100%; aspect-ratio: 4/5;
+    background: linear-gradient(160deg, var(--teal-bg) 0%, #d4eeee 100%);
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px;
+  }
+  .hero-placeholder svg { width: 80px; height: 80px; opacity: .35; }
+  .hero-placeholder p { color: var(--muted); font-size: .85rem; }
+  .hero-card {
+    position: absolute; bottom: -16px; left: -24px;
+    background: var(--white); border-radius: 16px;
+    padding: 16px 20px; box-shadow: 0 8px 32px rgba(0,0,0,.12);
+    display: flex; align-items: center; gap: 12px; min-width: 200px;
+  }
+  .hero-card-icon { width: 44px; height: 44px; border-radius: 12px; background: var(--teal-bg); display: grid; place-items: center; flex-shrink: 0; }
+  .hero-card-icon svg { width: 22px; height: 22px; stroke: var(--teal); stroke-width: 2; fill: none; }
+  .hero-card strong { display: block; font-size: .95rem; color: var(--text); font-weight: 600; }
+  .hero-card span { font-size: .78rem; color: var(--muted); }
+  .hero-card2 {
+    position: absolute; top: 20px; right: -20px;
+    background: var(--teal); border-radius: 14px;
+    padding: 12px 16px; box-shadow: 0 6px 24px rgba(42,122,123,.35);
+    color: #fff; text-align: center;
+  }
+  .hero-card2 strong { display: block; font-size: 1.4rem; font-family: 'Fraunces', serif; }
+  .hero-card2 span { font-size: .72rem; opacity: .85; }
+
+  /* ── SECTION COMMON ── */
+  section { padding: 80px 5%; }
+  .section-label {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: .78rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+    color: var(--teal); margin-bottom: 14px;
+  }
+  .section-label::before { content: ''; width: 24px; height: 2px; background: var(--teal); border-radius: 2px; }
+  .section-title { font-size: clamp(1.8rem, 3vw, 2.6rem); line-height: 1.2; margin-bottom: 16px; }
+  .section-sub { color: var(--muted); font-size: 1rem; line-height: 1.7; max-width: 560px; }
+  .text-center { text-align: center; }
+  .text-center .section-label { justify-content: center; }
+  .text-center .section-sub { margin: 0 auto; }
+
+  /* ── FACILITIES STRIP ── */
+  .facilities {
+    background: var(--teal); padding: 40px 5%;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 0;
+  }
+  .facility-item {
+    display: flex; flex-direction: column; align-items: center; gap: 10px;
+    padding: 24px 16px; border-right: 1px solid rgba(255,255,255,.15);
+    color: #fff; text-align: center;
+    transition: background .2s;
+  }
+  .facility-item:last-child { border-right: none; }
+  .facility-item:hover { background: rgba(255,255,255,.08); }
+  .facility-item svg { width: 32px; height: 32px; stroke: rgba(255,255,255,.85); stroke-width: 1.8; fill: none; }
+  .facility-item span { font-size: .82rem; font-weight: 500; opacity: .9; }
+
+  /* ── SERVICES ── */
+  .services { background: var(--cream); }
+  .services-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px; margin-top: 48px;
+  }
+  .service-card {
+    background: var(--white); border-radius: 20px; padding: 32px 28px;
+    border: 1px solid var(--sand); transition: transform .2s, box-shadow .2s;
+    position: relative; overflow: hidden;
+  }
+  .service-card::after {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: var(--teal); transform: scaleX(0); transform-origin: left;
+    transition: transform .3s;
+  }
+  .service-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(42,122,123,.14); }
+  .service-card:hover::after { transform: scaleX(1); }
+  .service-icon {
+    width: 56px; height: 56px; border-radius: 14px; background: var(--teal-bg);
+    display: grid; place-items: center; margin-bottom: 20px;
+  }
+  .service-icon svg { width: 28px; height: 28px; stroke: var(--teal); stroke-width: 2; fill: none; }
+  .service-card h3 { font-size: 1.15rem; margin-bottom: 10px; }
+  .service-card p { font-size: .87rem; color: var(--muted); line-height: 1.65; }
+  .service-link { display: inline-flex; align-items: center; gap: 6px; color: var(--teal); font-size: .83rem; font-weight: 600; margin-top: 14px; text-decoration: none; }
+  .service-link svg { width: 14px; height: 14px; stroke: var(--teal); stroke-width: 2.5; fill: none; transition: transform .2s; }
+  .service-link:hover svg { transform: translateX(4px); }
+
+  /* ── WHY US ── */
+  .why { background: var(--warm); }
+  .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-top: 16px; }
+  .why-visual {
+    background: linear-gradient(160deg, var(--teal-bg) 0%, #d4eeee 100%);
+    border-radius: 24px; aspect-ratio: 1; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 16px;
+    position: relative; overflow: hidden;
+  }
+  .why-visual svg { width: 90px; height: 90px; opacity: .3; }
+  .why-visual p { color: var(--muted); font-size: .85rem; }
+  .why-points { display: flex; flex-direction: column; gap: 24px; margin-top: 32px; }
+  .why-point { display: flex; gap: 18px; align-items: flex-start; }
+  .why-point-num {
+    width: 40px; height: 40px; border-radius: 10px; background: var(--teal);
+    color: #fff; font-family: 'Fraunces', serif; font-size: 1.1rem;
+    display: grid; place-items: center; flex-shrink: 0;
+  }
+  .why-point h4 { font-size: .97rem; margin-bottom: 4px; }
+  .why-point p { font-size: .85rem; color: var(--muted); line-height: 1.6; }
+
+  /* ── DOCTORS ── */
+  .doctors { background: var(--cream); }
+  .doctors-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; margin-top: 48px; }
+  .doctor-card {
+    background: var(--white); border-radius: 20px; overflow: hidden;
+    border: 1px solid var(--sand); transition: transform .2s, box-shadow .2s;
+    text-align: center;
+  }
+  .doctor-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(42,122,123,.12); }
+  .doctor-avatar {
+    background: linear-gradient(160deg, var(--teal-bg) 0%, #d4eeee 100%);
+    height: 180px; display: flex; align-items: center; justify-content: center;
+  }
+  .doctor-avatar svg { width: 70px; height: 70px; opacity: .35; }
+  .doctor-info { padding: 20px; }
+  .doctor-info h3 { font-size: 1rem; margin-bottom: 4px; }
+  .doctor-info .dept { font-size: .8rem; color: var(--teal); font-weight: 600; margin-bottom: 6px; }
+  .doctor-info .qual { font-size: .78rem; color: var(--muted); }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials { background: var(--teal-bg); }
+  .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 48px; }
+  .testi-card {
+    background: var(--white); border-radius: 20px; padding: 28px;
+    border: 1px solid var(--sand); transition: transform .2s;
+  }
+  .testi-card:hover { transform: translateY(-4px); }
+  .stars { color: #F5A623; font-size: 1rem; margin-bottom: 14px; }
+  .testi-card p { font-size: .9rem; color: var(--muted); line-height: 1.7; margin-bottom: 20px; font-style: italic; }
+  .testi-author { display: flex; align-items: center; gap: 12px; }
+  .testi-avatar {
+    width: 42px; height: 42px; border-radius: 50%;
+    background: var(--teal-bg); display: grid; place-items: center;
+    font-family: 'Fraunces', serif; font-size: 1rem; color: var(--teal); font-weight: 700;
+  }
+  .testi-author strong { display: block; font-size: .88rem; }
+  .testi-author span { font-size: .78rem; color: var(--muted); }
+
+  /* ── BOOK CTA ── */
+  .book-cta {
+    background: linear-gradient(135deg, var(--teal) 0%, #1d5e5f 100%);
+    text-align: center; padding: 80px 5%;
+    position: relative; overflow: hidden;
+  }
+  .book-cta::before {
+    content: ''; position: absolute; top: -100px; left: -100px;
+    width: 400px; height: 400px; border-radius: 50%;
+    background: rgba(255,255,255,.05); pointer-events: none;
+  }
+  .book-cta::after {
+    content: ''; position: absolute; bottom: -80px; right: -80px;
+    width: 350px; height: 350px; border-radius: 50%;
+    background: rgba(255,255,255,.04); pointer-events: none;
+  }
+  .book-cta h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); color: #fff; margin-bottom: 14px; }
+  .book-cta p { color: rgba(255,255,255,.75); font-size: 1rem; max-width: 500px; margin: 0 auto 36px; line-height: 1.7; }
+  .btn-whatsapp {
+    background: #25D366; color: #fff; border: none; border-radius: 50px;
+    padding: 16px 34px; font-size: 1rem; font-weight: 700; cursor: pointer;
+    display: inline-flex; align-items: center; gap: 12px; text-decoration: none;
+    transition: all .2s; box-shadow: 0 6px 24px rgba(0,0,0,.2);
+  }
+  .btn-whatsapp:hover { background: #1fb855; transform: translateY(-2px); box-shadow: 0 10px 32px rgba(0,0,0,.25); }
+  .btn-whatsapp svg { width: 22px; height: 22px; fill: #fff; }
+  .book-cta-note { color: rgba(255,255,255,.55); font-size: .8rem; margin-top: 16px; }
+
+  /* ── CONTACT ── */
+  .contact { background: var(--cream); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-top: 48px; }
+  .contact-info { display: flex; flex-direction: column; gap: 24px; }
+  .contact-item { display: flex; gap: 16px; align-items: flex-start; }
+  .contact-item-icon {
+    width: 46px; height: 46px; border-radius: 12px; background: var(--teal-bg);
+    display: grid; place-items: center; flex-shrink: 0;
+  }
+  .contact-item-icon svg { width: 22px; height: 22px; stroke: var(--teal); stroke-width: 2; fill: none; }
+  .contact-item h4 { font-size: .88rem; margin-bottom: 4px; }
+  .contact-item p { font-size: .85rem; color: var(--muted); line-height: 1.6; }
+  .map-placeholder {
+    border-radius: 20px; overflow: hidden; height: 320px;
+    background: var(--teal-bg); display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 12px;
+    border: 1px solid var(--sand);
+  }
+  .map-placeholder svg { width: 48px; height: 48px; stroke: var(--teal); stroke-width: 1.5; fill: none; opacity: .5; }
+  .map-placeholder p { color: var(--muted); font-size: .85rem; }
+  .map-placeholder a { color: var(--teal); font-size: .83rem; font-weight: 600; text-decoration: none; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--text); color: rgba(255,255,255,.7);
+    padding: 50px 5% 24px;
+  }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+  .footer-brand .nav-logo-text strong { color: #fff; }
+  .footer-brand p { font-size: .85rem; line-height: 1.7; margin-top: 14px; max-width: 280px; }
+  .footer-col h4 { font-family: 'Fraunces', serif; color: #fff; font-size: 1rem; margin-bottom: 14px; }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .footer-col ul a { text-decoration: none; color: rgba(255,255,255,.6); font-size: .85rem; transition: color .2s; }
+  .footer-col ul a:hover { color: var(--teal-lt); }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,.08); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; font-size: .8rem; flex-wrap: wrap; gap: 10px; }
+  .footer-bottom a { color: var(--teal-lt); text-decoration: none; }
+
+  /* ── FLOATING WA ── */
+  .float-wa {
+    position: fixed; bottom: 28px; right: 28px; z-index: 999;
+    width: 58px; height: 58px; border-radius: 50%;
+    background: #25D366; display: grid; place-items: center;
+    box-shadow: 0 6px 24px rgba(37,211,102,.4);
+    text-decoration: none; transition: transform .2s;
+    animation: wa-bounce 3s ease-in-out infinite;
+  }
+  .float-wa:hover { transform: scale(1.1); }
+  .float-wa svg { width: 28px; height: 28px; fill: #fff; }
+  @keyframes wa-bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+
+  /* ── MOBILE ── */
+  @media (max-width: 900px) {
+    .nav-links, .nav-cta { display: none; }
+    .hamburger { display: flex; }
+    .hero { grid-template-columns: 1fr; padding: 50px 5% 40px; }
+    .hero-visual { order: -1; }
+    .hero-img-wrap { max-width: 340px; }
+    .hero-card, .hero-card2 { display: none; }
+    .why-grid, .contact-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .facility-item { padding: 18px 10px; }
+    .facilities { grid-template-columns: repeat(4, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 2rem; }
+    .facilities { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+    .hero-stats { gap: 18px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="file:///C:/Users/karan/Downloads/gokak-hospital.html#">
+    <div class="nav-logo-icon">
+      <svg viewBox="0 0 24 24"><path d="M12 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"></path><path d="M12 8v14M8 12h8"></path></svg>
+    </div>
+    <div class="nav-logo-text">
+      <strong>Atharv Hospital</strong>
+      <span>Advanced Healthcare · Gokak, Karnataka</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="file:///C:/Users/karan/Downloads/gokak-hospital.html#services">Services</a></li>
+    <li><a href="file:///C:/Users/karan/Downloads/gokak-hospital.html#doctors">Doctors</a></li>
+    <li><a href="file:///C:/Users/karan/Downloads/gokak-hospital.html#why">About</a></li>
+    <li><a href="file:///C:/Users/karan/Downloads/gokak-hospital.html#contact">Contact</a></li>
+  </ul>
+  <a class="nav-cta" href="https://wa.me/918308494936?text=Hi%2C%20I%20would%20like%20to%20book%20an%20appointment" target="_blank">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"></path><path d="M12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.43 1.27 4.87L2 22l5.32-1.24A9.96 9.96 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"></path></svg>
+    Book Appointment
+  </a>
+  <button class="hamburger" onclick="document.querySelector(&#39;.nav-links&#39;).style.cssText=&#39;display:flex;flex-direction:column;position:absolute;top:70px;left:0;right:0;background:#fff;padding:20px 5%;border-bottom:1px solid #E8DDD0;gap:18px;z-index:99&#39;">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div>
+    <div class="hero-badge">
+      <div class="hero-badge-dot"></div>
+      Serving Gokak &amp; Surrounding Districts
+    </div>
+    <h1>Your Health,<br>Our <em>Priority</em> in Gokak</h1>
+    <p>Atharv Hospital brings world-class medical expertise to your doorstep — with compassionate doctors, modern diagnostics, and round-the-clock emergency care.</p>
+    <div class="hero-btns">
+      <a class="btn-primary" href="https://wa.me/918308494936?text=Hi%2C%20I%20would%20like%20to%20book%20an%20appointment" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"></path><path d="M12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.43 1.27 4.87L2 22l5.32-1.24A9.96 9.96 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"></path></svg>
+        Book Now on WhatsApp
+      </a>
+      <a class="btn-secondary" href="file:///C:/Users/karan/Downloads/gokak-hospital.html#services">Our Services</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><strong>15+</strong><span>Years of Service</span></div>
+      <div class="stat"><strong>25+</strong><span>Specialist Doctors</span></div>
+      <div class="stat"><strong>50k+</strong><span>Patients Treated</span></div>
+      <div class="stat"><strong>24×7</strong><span>Emergency Care</span></div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-img-wrap">
+      <div class="hero-placeholder">
+        <svg viewBox="0 0 100 100" fill="none" stroke="#2A7A7B" stroke-width="3">
+          <rect x="20" y="15" width="60" height="70" rx="4"></rect>
+          <path d="M50 30v30M35 45h30"></path>
+          <circle cx="50" cy="50" r="35" stroke-dasharray="6 4" opacity=".4"></circle>
+        </svg>
+        <p>Hospital Building Image</p>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-card-icon">
+        <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+      </div>
+      <div>
+        <strong>Emergency 24×7</strong>
+        <span>Immediate response team</span>
+      </div>
+    </div>
+    <div class="hero-card2">
+      <strong>NABH</strong>
+      <span>Accredited</span>
+    </div>
+  </div>
+</section>
+
+<!-- FACILITIES STRIP -->
+<div class="facilities">
+  <div class="facility-item">
+    <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+    <span>OPD / IPD</span>
+  </div>
+  <div class="facility-item">
+    <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+    <span>ICU Care</span>
+  </div>
+  <div class="facility-item">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+    <span>24×7 Lab</span>
+  </div>
+  <div class="facility-item">
+    <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"></path></svg>
+    <span>X-Ray &amp; Scan</span>
+  </div>
+  <div class="facility-item">
+    <svg viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg>
+    <span>Ambulance 24×7</span>
+  </div>
+  <div class="facility-item">
+    <svg viewBox="0 0 24 24"><path d="M3 3h18v18H3z"></path><path d="M3 9h18M3 15h18M9 3v18M15 3v18"></path></svg>
+    <span>Pharmacy</span>
+  </div>
+  <div class="facility-item">
+    <svg viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"></path></svg>
+    <span>Operation Theatre</span>
+  </div>
+  <div class="facility-item">
+    <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z"></path><path d="M12 8v4l3 3"></path></svg>
+    <span>Appointments</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="text-center">
+    <div class="section-label">Our Specialities</div>
+    <h2 class="section-title">Comprehensive Medical Services</h2>
+    <p class="section-sub">From routine check-ups to complex surgeries, our expert team provides complete healthcare solutions for you and your family.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+      </div>
+      <h3>Cardiology</h3>
+      <p>Advanced diagnosis and treatment for heart conditions. ECG, 2D Echo, and expert cardiac consultation available.</p>
+      <a class="service-link" href="https://wa.me/918308494936?text=I%20need%20a%20Cardiology%20appointment" target="_blank">Book Appointment <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3M12 17h.01"></path></svg>
+      </div>
+      <h3>General Medicine</h3>
+      <p>Expert internal medicine care for fevers, infections, lifestyle diseases, and comprehensive health evaluations.</p>
+      <a class="service-link" href="https://wa.me/918308494936?text=I%20need%20a%20General%20Medicine%20appointment" target="_blank">Book Appointment <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z"></path></svg>
+      </div>
+      <h3>Paediatrics</h3>
+      <p>Specialised child healthcare from newborns to teenagers — vaccinations, growth monitoring, and paediatric emergencies.</p>
+      <a class="service-link" href="https://wa.me/918308494936?text=I%20need%20a%20Paediatrics%20appointment" target="_blank">Book Appointment <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 0 0 1.946-.806 3.42 3.42 0 0 1 4.438 0 3.42 3.42 0 0 0 1.946.806 3.42 3.42 0 0 1 3.138 3.138 3.42 3.42 0 0 0 .806 1.946 3.42 3.42 0 0 1 0 4.438 3.42 3.42 0 0 0-.806 1.946 3.42 3.42 0 0 1-3.138 3.138 3.42 3.42 0 0 0-1.946.806 3.42 3.42 0 0 1-4.438 0 3.42 3.42 0 0 0-1.946-.806 3.42 3.42 0 0 1-3.138-3.138 3.42 3.42 0 0 0-.806-1.946 3.42 3.42 0 0 1 0-4.438 3.42 3.42 0 0 0 .806-1.946 3.42 3.42 0 0 1 3.138-3.138z"></path></svg>
+      </div>
+      <h3>Orthopaedics</h3>
+      <p>Bone, joint, and spine care — fracture management, joint replacement, sports injuries, and physiotherapy.</p>
+      <a class="service-link" href="https://wa.me/918308494936?text=I%20need%20an%20Orthopaedics%20appointment" target="_blank">Book Appointment <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+      </div>
+      <h3>Gynaecology &amp; Obstetrics</h3>
+      <p>Safe and caring maternity services, high-risk pregnancy management, and complete women's healthcare.</p>
+      <a class="service-link" href="https://wa.me/918308494936?text=I%20need%20a%20Gynaecology%20appointment" target="_blank">Book Appointment <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+      </div>
+      <h3>Emergency &amp; Trauma</h3>
+      <p>24×7 emergency team on standby for accidents, trauma, and critical medical emergencies with ICU support.</p>
+      <a class="service-link" href="https://wa.me/918308494936?text=Emergency%20-%20I%20need%20immediate%20help" target="_blank">Contact Now <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why" id="why">
+  <div class="why-grid">
+    <div>
+      <div class="section-label">Why Choose Us</div>
+      <h2 class="section-title">Healthcare You Can Trust in Gokak</h2>
+      <p class="section-sub">We combine modern technology with warm, personalised care — all within Gokak, so you don't have to travel far.</p>
+      <div class="why-points">
+        <div class="why-point">
+          <div class="why-point-num">01</div>
+          <div>
+            <h4>Experienced Specialist Doctors</h4>
+            <p>Our team of 25+ specialists brings decades of expertise across all major medical disciplines.</p>
+          </div>
+        </div>
+        <div class="why-point">
+          <div class="why-point-num">02</div>
+          <div>
+            <h4>Advanced Diagnostic Technology</h4>
+            <p>Fully equipped with modern imaging, pathology labs, and diagnostic equipment for accurate diagnosis.</p>
+          </div>
+        </div>
+        <div class="why-point">
+          <div class="why-point-num">03</div>
+          <div>
+            <h4>Affordable, Transparent Pricing</h4>
+            <p>Quality healthcare shouldn't be a luxury. We offer clear pricing and assist with health insurance claims.</p>
+          </div>
+        </div>
+        <div class="why-point">
+          <div class="why-point-num">04</div>
+          <div>
+            <h4>Compassionate Patient Care</h4>
+            <p>Every patient is treated with dignity and empathy. We care about your wellbeing beyond just the diagnosis.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="why-visual">
+      <svg viewBox="0 0 100 100" fill="none" stroke="#2A7A7B" stroke-width="2.5">
+        <rect x="15" y="10" width="70" height="80" rx="6"></rect>
+        <path d="M50 25v30M35 40h30"></path>
+        <circle cx="50" cy="55" r="18" stroke-dasharray="5 3" opacity=".5"></circle>
+      </svg>
+      <p>Our State-of-the-Art Facility</p>
+    </div>
+  </div>
+</section>
+
+<!-- DOCTORS -->
+<section class="doctors" id="doctors">
+  <div class="text-center">
+    <div class="section-label">Our Team</div>
+    <h2 class="section-title">Meet Our Expert Doctors</h2>
+    <p class="section-sub">Highly qualified specialists committed to delivering the best medical outcomes for every patient.</p>
+  </div>
+  <div class="doctors-grid">
+    <div class="doctor-card">
+      <div class="doctor-avatar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#2A7A7B" stroke-width="1.5"><circle cx="12" cy="8" r="4"></circle><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"></path></svg>
+      </div>
+      <div class="doctor-info">
+        <h3>Dr. Rajesh Patil</h3>
+        <div class="dept">Cardiology</div>
+        <div class="qual">MD, DM · 18 Years Experience</div>
+      </div>
+    </div>
+    <div class="doctor-card">
+      <div class="doctor-avatar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#2A7A7B" stroke-width="1.5"><circle cx="12" cy="8" r="4"></circle><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"></path></svg>
+      </div>
+      <div class="doctor-info">
+        <h3>Dr. Sunita Kulkarni</h3>
+        <div class="dept">Gynaecology &amp; Obstetrics</div>
+        <div class="qual">MS, OBG · 14 Years Experience</div>
+      </div>
+    </div>
+    <div class="doctor-card">
+      <div class="doctor-avatar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#2A7A7B" stroke-width="1.5"><circle cx="12" cy="8" r="4"></circle><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"></path></svg>
+      </div>
+      <div class="doctor-info">
+        <h3>Dr. Anil Desai</h3>
+        <div class="dept">Orthopaedics</div>
+        <div class="qual">MS Ortho · 12 Years Experience</div>
+      </div>
+    </div>
+    <div class="doctor-card">
+      <div class="doctor-avatar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#2A7A7B" stroke-width="1.5"><circle cx="12" cy="8" r="4"></circle><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"></path></svg>
+      </div>
+      <div class="doctor-info">
+        <h3>Dr. Meera Joshi</h3>
+        <div class="dept">Paediatrics</div>
+        <div class="qual">MD Paediatrics · 10 Years Experience</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="text-center">
+    <div class="section-label">Patient Stories</div>
+    <h2 class="section-title">What Our Patients Say</h2>
+    <p class="section-sub">Thousands of families in Gokak and nearby areas trust us with their healthcare needs.</p>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p>"Excellent care and facilities. The doctors were very thorough and explained everything clearly. My family feels safe knowing Gokak Care is nearby."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">P</div>
+        <div>
+          <strong>Pradeep Hiremath</strong>
+          <span>Gokak Town</span>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p>"My mother needed emergency care and the team responded within minutes. The ICU staff were incredibly compassionate and professional throughout."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">S</div>
+        <div>
+          <strong>Savitri Nayak</strong>
+          <span>Gokak Falls Area</span>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p>"Delivered my baby here — the maternity ward was clean and the nurses so kind. Dr. Sunita made the whole experience smooth and reassuring."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">A</div>
+        <div>
+          <strong>Ananya Patil</strong>
+          <span>Hukkeri Taluk</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOK CTA -->
+<section class="book-cta">
+  <h2>Ready to Book Your Appointment?</h2>
+  <p>Consult with our specialist doctors in minutes. Simply message us on WhatsApp and we'll confirm your appointment right away.</p>
+  <a class="btn-whatsapp" href="https://wa.me/918308494936?text=Hi%2C%20I%20would%20like%20to%20book%20an%20appointment%20at%20Gokak%20Care%20Hospital" target="_blank">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"></path><path d="M12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.43 1.27 4.87L2 22l5.32-1.24A9.96 9.96 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"></path></svg>
+    Book Now on WhatsApp
+  </a>
+  <p class="book-cta-note">Available Monday – Saturday · 8:00 AM – 8:00 PM · Emergency: 24×7</p>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-label">Get in Touch</div>
+  <h2 class="section-title">Find Us in Gokak</h2>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <div class="contact-item">
+        <div class="contact-item-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+        </div>
+        <div>
+          <h4>Address</h4>
+          <p>Atharv Hospital, Main Road, Near Bus Stand,<br>Gokak – 591 307, Belagavi District, Karnataka</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.27a16 16 0 0 0 5.86 5.86l1.27-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16l.19.92z"></path></svg>
+        </div>
+        <div>
+          <h4>Phone</h4>
+          <p>+91 98765 43210 (OPD &amp; Appointments)<br>+91 98765 43211 (Emergency — 24×7)</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+        </div>
+        <div>
+          <h4>Email</h4>
+          <p>info@Atharvhospital.in<br>appointments@atharvcarehospital.in</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        </div>
+        <div>
+          <h4>Working Hours</h4>
+          <p>OPD: Mon – Sat · 8:00 AM – 8:00 PM<br>Emergency: 24 hours, 7 days a week</p>
+        </div>
+      </div>
+      <a class="btn-primary" style="align-self:flex-start;margin-top:8px" href="https://wa.me/918308494936?text=Hi%2C%20I%20would%20like%20to%20book%20an%20appointment" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"></path><path d="M12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.43 1.27 4.87L2 22l5.32-1.24A9.96 9.96 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"></path></svg>
+        Book Appointment on WhatsApp
+      </a>
+    </div>
+    <div class="map-placeholder">
+      <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+      <p>Gokak, Belagavi District, Karnataka</p>
+      <a href="https://maps.google.com/?q=Gokak,Karnataka" target="_blank">Open in Google Maps →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="nav-logo" style="margin-bottom:12px">
+        <div class="nav-logo-icon" style="background:#2A7A7B">
+          <svg viewBox="0 0 24 24" style="width:22px;height:22px;fill:none;stroke:#fff;stroke-width:2"><path d="M12 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"></path><path d="M12 8v14M8 12h8"></path></svg>
+        </div>
+        <div class="nav-logo-text">
+          <strong>Atharv Hospital</strong>
+          <span style="color:rgba(255,255,255,.5)">Advanced Healthcare · Gokak</span>
+        </div>
+      </div>
+      <p>Bringing quality, compassionate healthcare to Gokak and Belagavi district since 2009. Your health is our highest priority.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="file:///C:/Users/karan/Downloads/gokak-hospital.html#">Cardiology</a></li>
+        <li><a href="file:///C:/Users/karan/Downloads/gokak-hospital.html#">General Medicine</a></li>
+        <li><a href="file:///C:/Users/karan/Downloads/gokak-hospital.html#">Paediatrics</a></li>
+        <li><a href="file:///C:/Users/karan/Downloads/gokak-hospital.html#">Orthopaedics</a></li>
+        <li><a href="file:///C:/Users/karan/Downloads/gokak-hospital.html#">Gynaecology</a></li>
+        <li><a href="file:///C:/Users/karan/Downloads/gokak-hospital.html#">Emergency Care</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Hospital</h4>
+      <ul>
+        <li><a href="file:///C:/Users/karan/Downloads/gokak-hospital.html#">About Us</a></li>
+        <li><a href="file:///C:/Users/karan/Downloads/gokak-hospital.html#">Our Doctors</a></li>
+        <li><a href="file:///C:/Users/karan/Downloads/gokak-hospital.html#">Facilities</a></li>
+        <li><a href="file:///C:/Users/karan/Downloads/gokak-hospital.html#">Health Packages</a></li>
+        <li><a href="file:///C:/Users/karan/Downloads/gokak-hospital.html#">Insurance</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+918308494936">+91 98765 43210</a></li>
+        <li><a href="mailto:info@gokakcarehospital.in">info@Atharvhospital.in</a></li>
+        <li><a href="https://wa.me/918308494936" target="_blank">WhatsApp Us</a></li>
+        <li><a href="file:///C:/Users/karan/Downloads/gokak-hospital.html#">Get Directions</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Atharv Hospital. All rights reserved.</span>
+    <span>Designed with ❤️ for Gokak | <a href="file:///C:/Users/karan/Downloads/gokak-hospital.html#">Privacy Policy</a></span>
+  </div>
+</footer>
+
+<!-- Floating WhatsApp Button -->
+<a class="float-wa" href="https://wa.me/918308494936?text=Hi%2C%20I%20would%20like%20to%20book%20an%20appointment" target="_blank" title="Book on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"></path><path d="M12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.43 1.27 4.87L2 22l5.32-1.24A9.96 9.96 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"></path></svg>
+</a>
+
+
+
+</body></html>
